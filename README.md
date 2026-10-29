@@ -1,75 +1,99 @@
-# React + TypeScript + Vite
+# Leighton Cook — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal developer portfolio showcasing my software development projects, technical skills and professional experience.
 
-Currently, two official plugins are available:
+**Website:** [leightoncook.dev](https://leightoncook.dev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **Frontend:** React, TypeScript
+- **Build Tool:** Vite
+- **Styling:** CSS
+- **Code Quality:** ESLint
+- **Hosting:** Cloudflare Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- Git
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Clone the repository and install the dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/Avextro/developer-portfolio
+cd developer-portfolio
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the local development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+### Production Build
+
+Build the project for production:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run the linter:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```text
+developer-portfolio/
+├── docs/           # Project documentation
+├── public/         # Static assets
+├── src/            # Application source code
+├── .gitignore
+├── CONTRIBUTING.md # Development conventions
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## Planned Features
+
+- Professional introduction and background
+- Work experience and technical skills
+- Selected projects and technical contributions
+- Responsive desktop and mobile layouts
+- Contact information and professional links
+- Accessibility and search engine optimisation
+
+## Documentation
+
+- [Contributing Guidelines](CONTRIBUTING.md) — Coding standards, Git workflow and quality checks.
+- [Project Plan](docs/PLAN.md) — Planned features, priorities and milestones.
+- [Design Guidelines](docs/DESIGN.md) — Visual design system and UI/UX conventions.
+- [Architecture](docs/ARCHITECTURE.md) — Application structure and technical design.
+- [Technical Decisions](docs/DECISIONS.md) — Significant technical decisions and their rationale.
+
+## Deployment
+
+The portfolio is intended to be hosted on Cloudflare Pages and served through [leightoncook.dev](https://leightoncook.dev).
+
+## Licence
+
+Not currently specified.
