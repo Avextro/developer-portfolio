@@ -7,17 +7,35 @@
     "Segoe UI",
     sans-serif;
   color: #1a1a1a;
-  background: #ffffff;
+  background: var(--color-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Backgrounds */
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-surface-hover: #eeeeee;
+
+  /* Borders */
+  --color-border: #e5e5e5;
+  --color-border-strong: #cccccc;
+
+  /* Accent */
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-subtle: #dbeafe;
+
+  /* Text */
   --color-text: #1a1a1a;
   --color-muted: #666666;
-  --color-background: #ffffff;
-  --color-accent: #2563eb;
+
+  /* Feedback */
+  --color-success: #15803d;
+  --color-error: #b91c1c;
+  --color-warning: #a16207;
 
   --content-width: 1120px;
   --page-padding: 24px;
