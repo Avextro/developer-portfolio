@@ -12,10 +12,8 @@ const goatTradeCapstone: Experience = {
 
 const goatTrade: Experience = {
   company: "G.O.A.T Tradie",
-  role: "Full Stack Developer & Team Lead",
-  context: "QUT Capstone Project",
-  startDate: parseMonthYear("03-2024"),
-  endDate: parseMonthYear("11-2024"),
+  role: "Full Stack Developer & Technical ProjectManager",
+  startDate: parseMonthYear("11-2024"),
   highlights: [],
 };
 

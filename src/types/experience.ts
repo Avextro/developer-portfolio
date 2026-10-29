@@ -5,6 +5,6 @@ export interface Experience {
   role: string;
   context?: string;
   startDate: MonthYear;
-  endDate: MonthYear | null;
+  endDate?: MonthYear | null;
   highlights: string[];
 }
