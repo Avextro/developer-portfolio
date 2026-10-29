@@ -1,12 +1,11 @@
 import HeroSection from "./sections/HeroSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <main>
-      <HeroSection></HeroSection>
-      <footer>
-        <p>© {new Date().getFullYear()} Leighton Cook</p>
-      </footer>
+      <HeroSection />
+      <Footer />
     </main>
   );
 }
