@@ -1,12 +1,13 @@
-import type { MonthYear } from './date';
+import type { MonthYear } from "./date";
+import type { Technology } from "./technology";
 
 export interface Project {
   id: string;
   name: string;
-  context: 'Professional' | 'University' | 'Personal';
+  context: "Professional" | "University" | "Personal";
   description: string;
   role: string;
-  technologies: string[];
+  technologies: Technology[];
 
   githubUrl?: string;
   liveUrl?: string;
