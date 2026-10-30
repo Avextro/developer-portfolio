@@ -11,7 +11,7 @@
 .carousel-content {
   display: flex;
   width: max-content;
-  animation: carousel-scroll 10s linear infinite;
+  animation: carousel-scroll 30s linear infinite;
 }
 
 /* Each group has identical dimensions */

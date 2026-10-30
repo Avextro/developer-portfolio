@@ -1,3 +1,4 @@
+import Carousel from "../components/Carousel";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/projectData";
 
@@ -7,7 +8,7 @@ function ProjectsSection() {
       <div className="container">
         <h2 id="projects-title">Projects</h2>
 
-        <div className="projects-grid">
+        <Carousel>
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -15,7 +16,7 @@ function ProjectsSection() {
               description={project.description}
             />
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );
