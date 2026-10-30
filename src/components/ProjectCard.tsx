@@ -1,4 +1,4 @@
-import "./ProjectCard.css";
+import Card from "./Card";
 
 interface ProjectCardProps {
   name: string;
@@ -7,10 +7,10 @@ interface ProjectCardProps {
 
 function ProjectCard({ name, description }: ProjectCardProps) {
   return (
-    <article className="project-card">
+    <Card className="project-card">
       <h3>{name}</h3>
       <p>{description}</p>
-    </article>
+    </Card>
   );
 }
 

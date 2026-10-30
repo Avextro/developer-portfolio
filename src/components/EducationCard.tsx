@@ -1,5 +1,5 @@
 import type { Education } from "../types/education";
-import "./EducationCard.css";
+import Card from "./Card";
 
 interface EducationCardProps {
   education: Education;
@@ -7,7 +7,7 @@ interface EducationCardProps {
 
 function EducationCard({ education }: EducationCardProps) {
   return (
-    <article className="education-card">
+    <Card className="education-card">
       <h3>{education.qualification}</h3>
       <p>{education.institution}</p>
       <p>Major: {education.major}</p>
@@ -16,7 +16,7 @@ function EducationCard({ education }: EducationCardProps) {
         {education.startDate}-{education.endDate}
       </p>
       {!education.completed && <p>Incomplete</p>}
-    </article>
+    </Card>
   );
 }
 

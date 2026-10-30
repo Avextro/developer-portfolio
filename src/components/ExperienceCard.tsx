@@ -1,5 +1,5 @@
 import type { Experience } from "../types/experience";
-import "./ExperienceCard.css";
+import Card from "./Card";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -7,7 +7,7 @@ interface ExperienceCardProps {
 
 function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
-    <article className="experience-card">
+    <Card className="experience-card">
       <h3>
         {experience.role} - {experience.company}
       </h3>
@@ -16,7 +16,7 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
       </p>
       {experience.context ?? <p>{experience.context}</p>}
       <p>{experience.highlights}</p>
-    </article>
+    </Card>
   );
 }
 

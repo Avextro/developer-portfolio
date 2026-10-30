@@ -1,5 +1,5 @@
 import type { SkillGroup } from "../types/skillGroup";
-import "./SkillGroupCard.css";
+import Card from "./Card";
 
 interface SkillGroupCardProps {
   group: SkillGroup;
@@ -7,7 +7,7 @@ interface SkillGroupCardProps {
 
 function SkillGroupCard({ group }: SkillGroupCardProps) {
   return (
-    <article className="skill-group-card">
+    <Card>
       <h3>{group.name}</h3>
 
       {group.technologies && (
@@ -30,7 +30,7 @@ function SkillGroupCard({ group }: SkillGroupCardProps) {
           ))}
         </ul>
       )}
-    </article>
+    </Card>
   );
 }
 
