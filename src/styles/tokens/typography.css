@@ -1,0 +1,51 @@
+:root {
+  /* Font families */
+  --font-family: "Inter", sans-serif;
+  --font-family-heading: var(--font-family);
+  --font-family-mono: monospace;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+  --font-size-6xl: 3.75rem; /* 60px */
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.35;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+  --line-height-loose: 1.8;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.04em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.04em;
+  --letter-spacing-wider: 0.08em;
+
+  /* Semantic typography */
+  --text-display: var(--font-size-6xl);
+  --text-h1: var(--font-size-5xl);
+  --text-h2: var(--font-size-4xl);
+  --text-h3: var(--font-size-3xl);
+  --text-h4: var(--font-size-2xl);
+  --text-body: var(--font-size-md);
+  --text-body-sm: var(--font-size-sm);
+  --text-caption: var(--font-size-xs);
+
+  /* Semantic weights */
+  --weight-heading: var(--font-weight-bold);
+  --weight-subheading: var(--font-weight-semibold);
+  --weight-body: var(--font-weight-regular);
+}

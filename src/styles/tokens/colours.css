@@ -1,0 +1,111 @@
+:root {
+  /* ========================================
+     PRIMARY – NAVY
+  ======================================== */
+  --color-primary-100: #e0e4eb;
+  --color-primary-200: #bdc6d5;
+  --color-primary-300: #9aa9bf;
+  --color-primary-400: #7588a0;
+  --color-primary-500: #506582;
+  --color-primary-600: #3a4e6a;
+  --color-primary-700: #253750;
+  --color-primary-800: #18243b;
+  --color-primary-900: #0c1427;
+
+  /* ========================================
+     SECONDARY – TEAL
+  ======================================== */
+  --color-secondary-100: #ccf5eb;
+  --color-secondary-200: #99ebd7;
+  --color-secondary-300: #66dcc1;
+  --color-secondary-400: #43caab;
+  --color-secondary-500: #20b895;
+  --color-secondary-600: #1a967a;
+  --color-secondary-700: #13765f;
+  --color-secondary-800: #115f50;
+  --color-secondary-900: #104d41;
+
+  /* ========================================
+     TERTIARY – MUTED CORAL
+  ======================================== */
+  --color-tertiary-100: #fff0eb;
+  --color-tertiary-200: #fae0d6;
+  --color-tertiary-300: #f5cfc2;
+  --color-tertiary-400: #efb8a5;
+  --color-tertiary-500: #e9a18d;
+  --color-tertiary-600: #d88c79;
+  --color-tertiary-700: #cb7865;
+  --color-tertiary-800: #ac6254;
+  --color-tertiary-900: #8d4d43;
+
+  /* ========================================
+     NEUTRAL
+  ======================================== */
+  --color-neutral-100: #f5f5f4;
+  --color-neutral-200: #e5e5e3;
+  --color-neutral-300: #d6d6d3;
+  --color-neutral-400: #bcbcb9;
+  --color-neutral-500: #a3a3a0;
+  --color-neutral-600: #7b7b78;
+  --color-neutral-700: #525250;
+  --color-neutral-800: #3c3c3a;
+  --color-neutral-900: #262625;
+
+  /* ========================================
+     SEMANTIC – BRAND
+  ======================================== */
+  --color-primary: var(--color-primary-500);
+  --color-primary-hover: var(--color-primary-300);
+  --color-on-primary: var(--color-neutral-100);
+
+  --color-secondary: var(--color-secondary-500);
+  --color-secondary-hover: var(--color-secondary-300);
+  --color-on-secondary: var(--color-primary-900);
+
+  --color-tertiary: var(--color-tertiary-500);
+  --color-tertiary-hover: var(--color-tertiary-300);
+  --color-on-tertiary: var(--color-primary-900);
+
+  /* ========================================
+     SEMANTIC – SURFACES
+  ======================================== */
+  --color-background: var(--color-primary-900);
+  --color-surface: var(--color-primary-700);
+  --color-surface-raised: var(--color-primary-500);
+  --color-surface-hover: var(--color-primary-600);
+
+  /* ========================================
+     SEMANTIC – TEXT
+  ======================================== */
+  --color-text: var(--color-neutral-100);
+  --color-text-muted: var(--color-neutral-300);
+  --color-text-disabled: var(--color-neutral-500);
+
+  /* ========================================
+     SEMANTIC – BORDERS & ICONS
+  ======================================== */
+  --color-border: var(--color-primary-500);
+  --color-border-strong: var(--color-neutral-700);
+
+  --color-icon: var(--color-neutral-300);
+  --color-icon-muted: var(--color-neutral-500);
+
+  /* ========================================
+     SEMANTIC – FEEDBACK
+  ======================================== */
+  --color-success: var(--color-secondary-500);
+  --color-success-bg: var(--color-secondary-900);
+  --color-on-success: var(--color-neutral-100);
+
+  --color-warning: #e9a13b;
+  --color-warning-bg: #49351d;
+  --color-on-warning: #ffffff;
+
+  --color-error: #dc5555;
+  --color-error-bg: #472525;
+  --color-on-error: #ffffff;
+
+  --color-info: var(--color-primary-300);
+  --color-info-bg: var(--color-primary-700);
+  --color-on-info: var(--color-neutral-100);
+}
