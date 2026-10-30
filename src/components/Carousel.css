@@ -1,0 +1,63 @@
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-content {
+  display: flex;
+  width: max-content;
+  animation: carousel-scroll 10s linear infinite;
+}
+
+/* Each group has identical dimensions */
+.carousel-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--spacing-6);
+  padding-right: var(--spacing-6);
+}
+
+/* Individual cards */
+.carousel-group > * {
+  flex: 0 0 320px;
+  min-width: 0;
+}
+
+/* Pause while interacting */
+.carousel:hover .carousel-content {
+  animation-play-state: paused;
+}
+
+/* Move exactly one group's width */
+@keyframes carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive sizing */
+@media (max-width: 600px) {
+  .carousel-group > * {
+    flex-basis: 85vw;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    overflow-x: auto;
+  }
+
+  .carousel-content {
+    animation: none;
+  }
+}
