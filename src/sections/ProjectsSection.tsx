@@ -10,11 +10,7 @@ function ProjectsSection() {
 
         <Carousel>
           {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              name={project.name}
-              description={project.description}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </Carousel>
       </div>
