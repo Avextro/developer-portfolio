@@ -16,7 +16,7 @@ const paddingStyles = {
 function Card({ children, className = "", padding = "md" }: CardProps) {
   return (
     <article
-      className={`rounded-xl m-2 border-2 border-border bg-surface ${paddingStyles[padding]} ${className}`}
+      className={`rounded-xl  border-2 border-border bg-surface ${paddingStyles[padding]} ${className}`}
     >
       {children}
     </article>
