@@ -8,17 +8,17 @@ interface CarouselProps {
 function Carousel({ children }: CarouselProps) {
   const items = Children.toArray(children);
   return (
-    <div className="carousel">
+    <div className="carousel relative w-full">
       <div
-        className="carousel-track"
+        className="carousel-mask w-full overflow-hidden"
         role="region"
         aria-label="Carousel"
         tabIndex={0}
       >
-        <div className="carousel-content">
-          <div className="carousel-group">{items}</div>
+        <div className="flex w-max animate-carousel">
+          <div className="flex shrink-0 gap-3 pr-3">{items}</div>
 
-          <div className="carousel-group" aria-hidden="true">
+          <div className="flex shrink-0 gap-3 pr-3" aria-hidden="true">
             {items.map((child, index) =>
               isValidElement(child)
                 ? cloneElement(child, {

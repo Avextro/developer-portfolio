@@ -1,63 +1,32 @@
-.carousel {
-  position: relative;
-  width: 100%;
+.carousel-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 1%,
+    black 99%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 1%,
+    black 99%,
+    transparent
+  );
 }
 
-.carousel-track {
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-content {
-  display: flex;
-  width: max-content;
-  animation: carousel-scroll 30s linear infinite;
-}
-
-/* Each group has identical dimensions */
-.carousel-group {
-  display: flex;
-  flex: 0 0 auto;
-  gap: var(--spacing-6);
-  padding-right: var(--spacing-6);
-}
-
-/* Individual cards */
-.carousel-group > * {
-  flex: 0 0 320px;
-  min-width: 0;
-}
-
-/* Pause while interacting */
-.carousel:hover .carousel-content {
+.carousel:hover .animate-carousel {
   animation-play-state: paused;
 }
 
-/* Move exactly one group's width */
-@keyframes carousel-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Responsive sizing */
-@media (max-width: 600px) {
-  .carousel-group > * {
-    flex-basis: 85vw;
-  }
-}
-
-/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .carousel-track {
+  .carousel-mask {
     overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
-  .carousel-content {
+  .animate-carousel {
     animation: none;
   }
 }
