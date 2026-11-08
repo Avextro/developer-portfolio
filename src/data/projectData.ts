@@ -120,6 +120,5 @@ export const projects: Project[] = [
   cab320,
   egb339,
   cab401,
-  cab320,
   cab302,
 ];
