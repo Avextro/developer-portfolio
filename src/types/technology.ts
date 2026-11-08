@@ -1,7 +1,9 @@
+import type { IconType } from "react-icons";
+
 export interface Technology {
   name: string;
-  category: TechnologyCategory;
-  icon?: string;
+  category: string;
+  icon?: IconType;
 }
 
 export type TechnologyCategory =
