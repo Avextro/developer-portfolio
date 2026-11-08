@@ -1,105 +1,104 @@
+@import "tailwindcss";
 /* ========================================
    Design tokens
    ======================================== */
 
 @import "./tokens/colours.css";
-@import "./tokens/spacing.css";
 @import "./tokens/typography.css";
-@import "./tokens/radius.css";
-@import "./tokens/borders.css";
 
 /* ========================================
    Global configuration
-   ======================================== */
+======================================== */
 
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --page-padding: 1rem;
 }
 
 /* ========================================
    Base document styles
-   ======================================== */
+======================================== */
 
-/* Apply consistent box sizing */
-* {
-  box-sizing: border-box;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
 
-html {
-  font-family: var(--font-family);
-  font-size: 100%;
-  scroll-behavior: smooth;
-}
+  body {
+    min-height: 100vh;
 
-body {
-  min-height: 100vh;
-  background: var(--color-background);
-  color: var(--color-text);
-  font-size: var(--text-body);
-  font-weight: var(--weight-body);
-  line-height: var(--line-height-normal);
+    background:
+      radial-gradient(
+        ellipse at 15% 10%,
+        color-mix(in srgb, var(--color-secondary) 12%, transparent),
+        transparent 40%
+      ),
+      radial-gradient(
+        ellipse at 85% 90%,
+        color-mix(in srgb, var(--color-tertiary) 8%, transparent),
+        transparent 40%
+      ),
+      linear-gradient(135deg, var(--color-primary-900), var(--color-background));
+
+    background-attachment: fixed;
+
+    @apply font-sans text-base font-normal leading-normal text-text;
+  }
+
+  h1 {
+    @apply text-5xl font-bold leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold leading-snug;
+  }
+
+  h4 {
+    @apply text-xl font-semibold leading-snug;
+  }
+
+  h5 {
+    @apply text-lg font-semibold;
+  }
+
+  h6 {
+    @apply text-base font-semibold;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
 }
 
 /* ========================================
-   Typography
-   ======================================== */
-
-/* Shared heading styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-heading);
-  font-weight: var(--weight-heading);
-  color: var(--color-text);
-}
-
-/* Heading sizes and line heights */
-h1 {
-  font-size: var(--text-h1);
-  line-height: var(--line-height-tight);
-}
-
-h2 {
-  font-size: var(--text-h2);
-  line-height: var(--line-height-tight);
-}
-
-h3 {
-  font-size: var(--text-h3);
-  line-height: var(--line-height-snug);
-}
-
-h4 {
-  font-size: var(--text-h4);
-  line-height: var(--line-height-snug);
-}
-
-h5 {
-  font-size: var(--font-size-xl);
-  line-height: var(--line-height-normal);
-}
-
-h6 {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-normal);
-}
+   Base elements
+======================================== */
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-/* ========================================
-   Form elements and controls
-   ======================================== */
 
 button,
 input,
@@ -108,22 +107,12 @@ select {
   font: inherit;
 }
 
-textarea {
-  resize: vertical;
-}
-
-/* Buttons */
 button {
   cursor: pointer;
 }
 
-/* ========================================
-   Lists and media
-   ======================================== */
-
-ul,
-ol {
-  padding-left: var(--spacing-6);
+textarea {
+  resize: vertical;
 }
 
 img {
@@ -132,26 +121,14 @@ img {
 }
 
 /* ========================================
-   Layout utilities
-   ======================================== */
+   Accessibility
+======================================== */
 
-.container {
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: var(--page-padding);
-}
-
-/* ========================================
-   Accessibility and interaction
-   ======================================== */
-
-/* Visible keyboard focus indicator */
 :focus-visible {
   outline: 2px solid var(--color-secondary);
   outline-offset: 3px;
 }
 
-/* Text selection colours */
 ::selection {
   background: var(--color-secondary);
   color: var(--color-primary-900);
@@ -159,13 +136,12 @@ img {
 
 /* ========================================
    Navigation and scrolling
-   ======================================== */
+======================================== */
 
 section {
   scroll-margin-top: 80px;
 }
 
-/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
