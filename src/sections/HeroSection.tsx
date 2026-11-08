@@ -1,7 +1,9 @@
+import Container from "../components/Container";
+
 function HeroSection() {
   return (
     <section id="hero">
-      <div className="container">
+      <Container>
         <h1>Hi, I'm Leighton Cook</h1>
 
         <h2 id="hero-title">Full Stack Developer</h2>
@@ -17,7 +19,7 @@ function HeroSection() {
             Download Resume
           </a>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

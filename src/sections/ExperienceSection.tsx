@@ -1,10 +1,11 @@
+import Container from "../components/Container";
 import ExperienceCard from "../components/ExperienceCard";
 import { experiences } from "../data/experienceData";
 
 function ExperiencesSection() {
   return (
     <section id="Experiences" aria-labelledby="Experiences-title">
-      <div className="container">
+      <Container>
         <h2 id="Experiences-title">Experience</h2>
 
         <div className="Experiences-grid">
@@ -12,7 +13,7 @@ function ExperiencesSection() {
             <ExperienceCard experience={experience} />
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

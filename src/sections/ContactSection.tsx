@@ -1,7 +1,9 @@
+import Container from "../components/Container";
+
 function ContactSection() {
   return (
     <section id="contact">
-      <div className="container">
+      <Container>
         <h2 id="contact-title">Contact</h2>
         <p>
           Email:{" "}
@@ -22,7 +24,7 @@ function ContactSection() {
             LinkedIn
           </a>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
