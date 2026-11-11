@@ -10,9 +10,23 @@ import "./Carousel.css";
 
 interface CarouselProps {
   children: ReactNode;
+
+  // Animation
+  itemEdgeToEdgeTime?: number;
+  playPauseRampTime?: number;
+
+  // Interaction
+  enableDrag?: boolean;
+  pauseOnHover?: boolean;
 }
 
-function Carousel({ children }: CarouselProps) {
+function Carousel({
+  children,
+  itemEdgeToEdgeTime = 15,
+  playPauseRampTime = 250,
+  enableDrag = true,
+  pauseOnHover = true,
+}: CarouselProps) {
   const items = Children.toArray(children);
 
   const trackRef = useRef<HTMLDivElement>(null);
@@ -22,13 +36,10 @@ function Carousel({ children }: CarouselProps) {
 
   const durationMsRef = useRef(30000);
   const pixelTimeRef = useRef(0);
-  const VIEWPORT_CROSSING_SECONDS = 15;
 
   const dragStartX = useRef(0);
   const dragStartTime = useRef(0);
   const isDragging = useRef(false);
-
-  const RAMP_DURATION = 250;
 
   const rampPlaybackRate = (targetRate: number) => {
     const animation = animationRef.current;
@@ -38,7 +49,7 @@ function Carousel({ children }: CarouselProps) {
     const startTime = performance.now();
 
     const animateRamp = (now: number) => {
-      const progress = Math.min((now - startTime) / RAMP_DURATION, 1);
+      const progress = Math.min((now - startTime) / playPauseRampTime, 1);
 
       // Ease in/out
       const eased = progress * progress * (3 - 2 * progress);
@@ -79,7 +90,7 @@ function Carousel({ children }: CarouselProps) {
 
       const newDurationMs =
         (groupWidth / (averageItemWidth + viewportWidth)) *
-        VIEWPORT_CROSSING_SECONDS *
+        itemEdgeToEdgeTime *
         1000;
 
       console.log("Viewport resized:", viewportWidth);
@@ -130,7 +141,7 @@ function Carousel({ children }: CarouselProps) {
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDragging.current) return;
+    if (!enableDrag || !isDragging.current) return;
 
     const dragDistance = dragStartX.current - event.clientX;
 
@@ -148,6 +159,18 @@ function Carousel({ children }: CarouselProps) {
     animationRef.current?.play();
   };
 
+  const handleMouseEnter = () => {
+    if (pauseOnHover) {
+      rampPlaybackRate(0);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (pauseOnHover) {
+      rampPlaybackRate(1);
+    }
+  };
+
   return (
     <div className="carousel relative w-full ">
       <div
@@ -160,8 +183,8 @@ function Carousel({ children }: CarouselProps) {
         <div
           className="flex w-max select-none"
           ref={trackRef}
-          onMouseEnter={() => rampPlaybackRate(0)}
-          onMouseLeave={() => rampPlaybackRate(1)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerMove={handlePointerMove}
