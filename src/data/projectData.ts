@@ -18,7 +18,7 @@ const goatTradieApp: Project = {
   name: "GOAT Tradie Business App",
   context: "Professional",
   description: "",
-  role: "Full Stack Developer & Technical Project Manager",
+  role: "Full Stack Developer & Technical Project Manag er",
   technologies: [
     flutter,
     dart,
@@ -46,6 +46,15 @@ const goatTradieAdmin: Project = {
     cloudFunctions,
     googleCloud,
   ],
+};
+
+const goatTradieEstimatingTool: Project = {
+  id: "goat-tradie-estimating-tool",
+  name: "GOAT Tradie Estimating Tool",
+  context: "Professional",
+  description: "",
+  role: "Technical Project Manager",
+  technologies: [],
 };
 
 const vexelDisplay: Project = {
@@ -114,6 +123,7 @@ const cab302: Project = {
 export const projects: Project[] = [
   goatTradieApp,
   goatTradieAdmin,
+  goatTradieEstimatingTool,
   vexelDisplay,
   cab202,
   cab301,
