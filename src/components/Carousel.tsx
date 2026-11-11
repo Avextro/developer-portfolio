@@ -6,14 +6,13 @@ import {
   useRef,
   type ReactNode,
 } from "react";
- import "./Carousel.css";
+import "./Carousel.css";
 
 interface CarouselProps {
   children: ReactNode;
 }
 
 function Carousel({ children }: CarouselProps) {
-
   const items = Children.toArray(children);
 
   const trackRef = useRef<HTMLDivElement>(null);
@@ -28,6 +27,31 @@ function Carousel({ children }: CarouselProps) {
   const dragStartX = useRef(0);
   const dragStartTime = useRef(0);
   const isDragging = useRef(false);
+
+  const RAMP_DURATION = 250;
+
+  const rampPlaybackRate = (targetRate: number) => {
+    const animation = animationRef.current;
+    if (!animation) return;
+
+    const startRate = animation.playbackRate;
+    const startTime = performance.now();
+
+    const animateRamp = (now: number) => {
+      const progress = Math.min((now - startTime) / RAMP_DURATION, 1);
+
+      // Ease in/out
+      const eased = progress * progress * (3 - 2 * progress);
+
+      animation.playbackRate = startRate + (targetRate - startRate) * eased;
+
+      if (progress < 1) {
+        requestAnimationFrame(animateRamp);
+      }
+    };
+
+    requestAnimationFrame(animateRamp);
+  };
 
   useEffect(() => {
     const group = groupRef.current;
@@ -136,8 +160,8 @@ function Carousel({ children }: CarouselProps) {
         <div
           className="flex w-max select-none"
           ref={trackRef}
-          onMouseEnter={() => animationRef.current?.pause()}
-          onMouseLeave={() => animationRef.current?.play()}
+          onMouseEnter={() => rampPlaybackRate(0)}
+          onMouseLeave={() => rampPlaybackRate(1)}
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerMove={handlePointerMove}
