@@ -15,18 +15,10 @@
   );
 }
 
-.carousel:hover .animate-carousel {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .carousel-mask {
     overflow-x: auto;
     mask-image: none;
     -webkit-mask-image: none;
-  }
-
-  .animate-carousel {
-    animation: none;
   }
 }
