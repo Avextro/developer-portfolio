@@ -1,23 +1,24 @@
-import type { Technology } from "../types/technology";
 import {
-  SiDart,
-  SiTypescript,
-  SiJavascript,
-  SiPython,
-  SiHtml5,
+  SiAssemblyscript,
+  SiBasecamp,
   SiCplusplus,
-  SiSharp,
-  SiLua,
-  SiFlutter,
-  SiReact,
+  SiDart,
   SiFirebase,
-  SiGooglecloud,
-  SiRevenuecat,
+  SiFlutter,
   SiGit,
   SiGithub,
+  SiGooglecloud,
+  SiHtml5,
+  SiJavascript,
   SiJira,
-  SiBasecamp,
+  SiLua,
+  SiPython,
+  SiReact,
+  SiRevenuecat,
+  SiSharp,
+  SiTypescript,
 } from "react-icons/si";
+import type { Technology } from "../types/technology";
 
 import { FaJava } from "react-icons/fa";
 
@@ -66,6 +67,11 @@ export const lua: Technology = {
   name: "Lua",
   category: "Language",
   icon: SiLua,
+};
+export const assembly: Technology = {
+  name: "Assembly",
+  category: "Language",
+  icon: SiAssemblyscript,
 };
 
 // Frameworks & libraries

@@ -1,13 +1,17 @@
 import type { Project } from "../types/project";
 // TODO: add tech and extra projects
 import {
+  assembly,
   cloudFirestore,
   cloudFunctions,
+  cpp,
+  csharp,
   dart,
   firebaseAnalytics,
   firebaseAuthentication,
   flutter,
   googleCloud,
+  python,
   react,
   revenueCat,
   typescript,
@@ -63,61 +67,61 @@ const vexelDisplay: Project = {
   context: "Personal",
   description: "",
   role: "Sole Full Stack Developer",
-  technologies: [],
+  technologies: [cpp, react],
 };
 
 const cab202: Project = {
   id: "cab-202",
-  name: "CAB202 Microprocessors",
+  name: "Microprocessor Simon Says",
   context: "University",
   description: "",
   role: "Sole Developer",
-  technologies: [],
+  technologies: [cpp, assembly],
 };
 
 const cab301: Project = {
   id: "cab-301",
-  name: "CAB301 C#",
+  name: "Inventory Management System",
   context: "University",
   description: "",
   role: "Sole Developer",
-  technologies: [],
+  technologies: [csharp],
 };
 
 const cab320: Project = {
   id: "cab-320",
-  name: "CAB320 AI",
+  name: "AI Image Classification",
   context: "University",
   description: "",
   role: "Sole Developer",
-  technologies: [],
+  technologies: [python],
 };
 
 const egb339: Project = {
   id: "egb-339",
-  name: "EGB339 Robotics",
+  name: "Robotics - Environment Processing & Interaction",
   context: "University",
   description: "",
   role: "Sole Developer",
-  technologies: [],
+  technologies: [python],
 };
 
 const cab401: Project = {
   id: "cab-401",
-  name: "CAB401 Parrellel Processing",
+  name: "Parrellel Processing of Genome Data",
   context: "University",
   description: "",
   role: "Sole Developer",
-  technologies: [],
+  technologies: [cpp],
 };
 
 const cab302: Project = {
   id: "cab-302",
-  name: "CAB302 Java",
+  name: "Pet Manager",
   context: "University",
   description: "",
   role: "Front End Developer",
-  technologies: [],
+  technologies: [csharp],
 };
 
 export const projects: Project[] = [
